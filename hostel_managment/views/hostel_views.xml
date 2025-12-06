@@ -1,0 +1,114 @@
+<odoo>
+
+        <!-- Form View -->
+        <record id="hostel_form_view" model="ir.ui.view">
+            <field name="name">hostel.view.form</field>
+            <field name="model">hostel.hostel</field>
+            <field name="arch" type="xml">
+
+                <form>
+                    <sheet>
+<!--        <button name="%(custom_report)d"-->
+<!--                            string="Print XLSX"-->
+<!--                            type="action"-->
+<!--                            class="btn-primary"/>-->
+
+
+<!--                      <div class="oe_button_box" name="button_box">-->
+<!--                            <button type="action"-->
+<!--                                    name="%(custom_report)d"-->
+<!--                                    class="oe_stat_button"-->
+<!--                                    icon="fa-print">-->
+<!--                                <span>Print PDF</span>-->
+<!--                            </button>-->
+<!--                        </div>-->
+
+
+                        <!--                        <smart button for pdf print option>-->
+                        <group>
+                            <field name="name" placeholder="Name"/>
+                            <field name="hostel_code" placeholder="Code"/>
+                            <field name="street" placeholder="Street..."/>
+                            <field name="street2" placeholder="Street2..."/>
+                            <field name="zip" placeholder="Zip Code...."/>
+                            <field name="city" placeholder="City...."/>
+                            <field name="state_id" placeholder="State Id"/>
+                            <field name="country_id" placeholder="Country iD....."/>
+                        </group>
+                        <group>
+                            <field name="phone" placeholder="Phone"/>
+                            <field name="mobile" placeholder="Mobile"/>
+                            <field name="email" placeholder="Email" widget="email"/>
+                            <field name="description"/>
+                            <field name="hostel_floors"/>
+                            <field name="image"/>
+                            <field name="active"/>
+                            <field name="type"/>
+                            <field name="hostel_rating"/>
+                            <field name="other_info"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="hostel_tree_view" model="ir.ui.view">
+            <field name="name">hostel.view.tree</field>
+            <field name="model">hostel.hostel</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" required="1"
+                           placeholder="Name"/>
+                    <field name="hostel_code" placeholder="Code"/>
+                    <field name="street" placeholder="Street..."/>
+                    <field name="street2" placeholder="Street2..."/>
+                    <field name="zip" placeholder="Zip Code...."/>
+                    <field name="city" placeholder="City...."/>
+                    <field name="state_id" placeholder="State Id"/>
+                    <field name="country_id" placeholder="Country iD....."/>
+                    <field name="phone" placeholder="Phone"/>
+                    <field name="mobile"/>
+                    <field name="email"/>
+                    <field name="description"/>
+                    <field name="hostel_floors"/>
+                    <field name="image"/>
+                    <field name="active"/>
+                    <field name="type"/>
+                    <field name="hostel_rating"/>
+                    <field name="other_info"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--        <search view>-->
+        <record id="search_hoste_view" model="ir.ui.view">
+            <field name="name">hostel search</field>
+            <field name="model">hostel.hostel</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="hostel_code"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="action_hostel" model="ir.actions.act_window">
+            <field name="name">Hostel</field>
+            <field name="res_model">hostel.hostel</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="menu_hostel_root" name="Hostel Management" sequence="10"/>
+
+        <menuitem id="hostel_menu"
+                  name="Hostels"
+                  parent="menu_hostel_root"
+                  action="action_hostel"
+                  sequence="10"/>
+
+
+</odoo>

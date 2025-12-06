@@ -1,0 +1,150 @@
+<odoo>
+
+    <!-- ========================= -->
+    <!-- 1️⃣ CUSTOM HEADER     -->
+    <!-- ========================= -->
+    <template id="custom_header">
+        <div class="header"
+             style="padding: 10px; border-bottom: 2px solid #000; font-size:14px;">
+            <div style="display:flex; justify-content:space-between;">
+                <div>
+                    <h2 style="margin:0;">Hostel Management</h2>
+                    <p style="margin:0;">Generated on:
+                        <span t-esc="time.strftime('%d-%m-%Y')"/>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- ========================= -->
+    <!-- 2️⃣ CUSTOM FOOTER         -->
+    <!-- ========================= -->
+    <template id="custom_footer">
+        <div class="footer"
+             style="padding: 8px; border-top: 2px solid #000; text-align:center; font-size:12px;">
+            <span>My Custom Footer</span>
+            <br/>
+            <span>Page
+                <span class="page"/>
+                /
+                <span class="topage"/>
+            </span>
+        </div>
+    </template>
+
+    <!-- ========================= -->
+    <!-- 3️⃣ MAIN REPORT TEMPLATE  -->
+    <!-- ========================= -->
+    <template id="main_report_template">
+        <t t-foreach="docs" t-as="doc">
+            <!-- Call Header -->
+            <t t-call="hostel_managment.custom_header"/>
+
+            <!-- Body -->
+            <main class="page" style="padding:15px;">
+                <h2 style="color: white; background-color: gray; text-align: center;">Custom Report PDF</h2>
+                <p>Hostel PDF custom report</p>
+
+                <p>Example Data:</p>
+                <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
+                    <thead>
+                        <tr>
+                            <th>Hostel Name</th>
+                            <th>Hostel Code</th>
+                            <th>Street</th>
+                            <th>Street 2</th>
+                            <th>Zip code</th>
+                            <th>city</th>
+                            <th>state_id</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="doc">
+                            <tr>
+                                <td t-esc="doc.name"/>
+                                <td t-esc="doc.hostel_code"/>
+                                <td t-esc="doc.street"/>
+                                <td t-esc="doc.street2"/>
+                                <td t-es="doc.zip"/>
+                                <td t-es="city"/>
+                                <td t-es="state_id"/>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <br/>
+                <h3 style="color: white; background-color: gray;">Country Information</h3>
+                <h4>fill accordingly your own reagon</h4>
+
+
+                <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
+                    <thead>
+                        <tr>
+                            <th>country_id</th>
+                            <th>phone</th>
+                            <th>mobile</th>
+                            <th>email</th>
+                            <th>description</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="doc">
+                            <tr>
+                                <td t-esc="doc.country_id.name"/>
+                                <td t-esc="doc.phone"/>
+                                <td t-esc="doc.mobile"/>
+                                <td t-esc="doc.email"/>
+                                <td t-es="doc.description"/>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <div>
+                    <h3 style="color: white; background-color: gray;">Terms and conditions</h3>
+
+                    <li>A legally binding contract between a business and its customers.</li>
+                    <li>A set of rules and guidelines for using a website, app, or product.</li>
+                    <li>Often called "Terms of Service" (ToS) or "Terms of Use" (ToU).
+                        What they typically include
+                    </li>
+                    <li>User conduct: Rules for acceptable user behavior.</li>
+                    <li>Prohibited activities: A list of actions that are not allowed.</li>
+                    <li>Content rights: Information about the use of the website's content.</li>
+                    <li>Termination: Reasons and processes for ending a user's access.</li>
+                    <li>Legal protections: Disclaimers and clauses that protect the business legally.</li>
+                </div>
+
+
+               <div style="display: flex; justify-content: space-between; margin-top: 50px;">
+
+    <div style="text-align: center; width: 30%;">
+        <p>_____________________</p>
+        <p>Authorized Signatory</p>
+        <small>Manager</small>
+    </div>
+
+    <div style="text-align: center; width: 30%;">
+        <p>_____________________</p>
+        <p>Approved By</p>
+        <small>Director</small>
+    </div>
+
+    <div style="text-align: center; width: 30%;">
+        <p>_____________________</p>
+        <p>Checked By</p>
+        <small>Accountant</small>
+    </div>
+</div>
+
+
+            </main>
+
+            <!-- Call Footer -->
+            <t t-call="hostel_managment.custom_footer"/>
+        </t>
+    </template>
+</odoo>
