@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+
+        <record id="category_view_xml" model="ir.ui.view">
+            <field name="name">category.hostel.tree</field>
+            <field name="model">hostel.category</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="parent_id"/>
+                    <field name="parent_path"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="category_view_form_view" model="ir.ui.view">
+            <field name="name">hostel.category.form</field>
+            <field name="model">hostel.category</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="parent_id"/>
+                            <field name="parent_path"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_category_hostel" model="ir.actions.act_window">
+            <field name="name">hostel category action</field>
+            <field name="res_model">hostel.category</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="hostel_category_menu"
+                  name="Hostel Category"
+                  action="action_category_hostel"
+                  parent="menu_hostel_root"
+                  sequence="13"/>
+    </data>
+</odoo>
