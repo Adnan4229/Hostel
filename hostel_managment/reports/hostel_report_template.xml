@@ -8,7 +8,7 @@
              style="padding: 10px; border-bottom: 2px solid #000; font-size:14px;">
             <div style="display:flex; justify-content:space-between;">
                 <div>
-                    <h2 style="margin:0;">Hostel Management</h2>
+                    <h2 style="margin:0;">Hostel Managements</h2>
                     <p style="margin:0;">Generated on:
                         <span t-esc="time.strftime('%d-%m-%Y')"/>
                     </p>
