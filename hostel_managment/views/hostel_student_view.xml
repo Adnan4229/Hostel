@@ -9,6 +9,7 @@
                     <field name="gender"/>
                     <field name="active"/>
                     <field name="room_id"/>
+                    <field name="hostel_id"/>
                 </tree>
             </field>
         </record>
@@ -25,6 +26,8 @@
                             <field name="gender"/>
                             <field name="active"/>
                             <field name="room_id"/>
+                            <field name="hostel_id"/>
+
                         </group>
                     </sheet>
                 </form>

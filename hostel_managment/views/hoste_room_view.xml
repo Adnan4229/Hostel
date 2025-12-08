@@ -9,6 +9,11 @@
                     <field name="currency_id"/>
                     <field name="rent_amount"/>
                     <field name="room_no"/>
+                    <field name="student_per_room"/>
+                    <field name="availability"/>
+                    <field name="admission_date"/>
+                    <field name="discharge_date"/>
+                    <field name="duration"/>
                 </tree>
             </field>
         </record>
@@ -25,6 +30,11 @@
                             <field name="currency_id"/>
                             <field name="rent_amount"/>
                             <field name="room_no"/>
+                            <field name="student_per_room"/>
+                            <field name="availability"/>
+                            <field name="admission_date"/>
+                            <field name="discharge_date"/>
+                            <field name="duration"/>
                         </group>
                     </sheet>
                 </form>
