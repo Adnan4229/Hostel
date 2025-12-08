@@ -8,6 +8,7 @@
                     <field name="hostel_id"/>
                     <field name="currency_id"/>
                     <field name="rent_amount"/>
+                    <field name="room_no"/>
                 </tree>
             </field>
         </record>
@@ -23,6 +24,7 @@
                             <field name="hostel_id"/>
                             <field name="currency_id"/>
                             <field name="rent_amount"/>
+                            <field name="room_no"/>
                         </group>
                     </sheet>
                 </form>
