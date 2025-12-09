@@ -10,13 +10,13 @@
         'security/ir.model.access.csv',
         'reports/hostel_report_action.xml',
         'reports/hostel_report_template.xml',
-        'reports/xlsx_report_action.xml',
-        'views/hostel_views.xml',
+        'views/hostel_hostel.xml',
         'views/hoste_room_view.xml',
         'views/hostel_student_view.xml',
         'views/hostel_amenities_view.xml',
         'views/category_hostel_view.xml',
-        'wizards/hostel_report_wizard_views.xml',
+        'wizards/xlsx_wizard_popup.xml',
+        'wizards/xlsx_report_action.xml',
 
     ],
     'assets': {
