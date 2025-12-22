@@ -16,6 +16,11 @@ class HostelRoom(models.Model):
     discharge_date = fields.Date("Discharge Date", help="Date on which student discharged")
     duration = fields.Integer("Duration", compute="_compute_check_duration",
                               inverse="_inverse_duration", help="Enter duration of living" ,store="true")
+    state = fields.Selection([
+        ('draft', 'Unavailable'),
+        ('available', 'Available'),
+        ('closed', 'Closed')],
+        'State', default="draft")
 
     @api.depends("admission_date","discharge_date")
     def _compute_check_duration(self):

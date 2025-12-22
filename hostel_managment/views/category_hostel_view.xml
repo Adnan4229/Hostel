@@ -23,6 +23,15 @@
                             <field name="parent_id"/>
                             <field name="parent_path"/>
                         </group>
+                        <notebook>
+                            <page string="Child Categories">
+                                <field name="child_ids">
+                                    <tree editable="bottom">
+                                        <field name="parent_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
